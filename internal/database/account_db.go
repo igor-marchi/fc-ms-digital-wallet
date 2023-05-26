@@ -44,7 +44,7 @@ func (a *AccountDB) Get(id string) (*entity.Account, error) {
 }
 
 func (a *AccountDB) Save(account *entity.Account) error {
-	stmt, err := a.DB.Prepare("INSERT INTO (account id, client_id, balance, created_at) VALUES (?, ?, ?, ?)")
+	stmt, err := a.DB.Prepare("INSERT INTO account ( id, client_id, balance, created_at) VALUES (?, ?, ?, ?)")
 	if err != nil {
 		return err
 	}
